@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expense Tracker (v2 - Versi Perbaikan)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Expense Tracker</h1>
+    <p class="badge-fixed">v2 · versi perbaikan</p>
+
+    <section class="card">
+      <h2>Tambah pengeluaran</h2>
+      <form id="expense-form">
+        <label>Tanggal
+          <input type="date" id="date">
+        </label>
+        <label>Deskripsi
+          <input type="text" id="description" placeholder="Contoh: Makan siang">
+        </label>
+        <label>Kategori
+          <select id="category">
+            <option value="Makanan">Makanan</option>
+            <option value="Transportasi">Transportasi</option>
+            <option value="Belanja">Belanja</option>
+            <option value="Hiburan">Hiburan</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </label>
+        <label>Jumlah (Rp)
+          <input type="number" id="amount" placeholder="25000" min="1" step="1">
+        </label>
+        <p id="form-error" class="error" role="alert" hidden></p>
+        <button type="submit">Tambah</button>
+      </form>
+    </section>
+
+    <section class="card summary">
+      <span>Total pengeluaran</span>
+      <strong id="total">Rp 0</strong>
+    </section>
+
+    <section class="card">
+      <div class="list-header">
+        <h2>Daftar transaksi</h2>
+        <label>Filter
+          <select id="filter">
+            <option value="Semua">Semua kategori</option>
+            <option value="Makanan">Makanan</option>
+            <option value="Transportasi">Transportasi</option>
+            <option value="Belanja">Belanja</option>
+            <option value="Hiburan">Hiburan</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </label>
+      </div>
+      <ul id="expense-list"></ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
